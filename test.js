@@ -2,6 +2,8 @@ const { expect } = require('chai');
 const { Builder } = require('selenium-webdriver');
 const ChatBotPage = require('./chatbot_page');
 const chrome = require('selenium-webdriver/chrome');
+const webdriver = require('selenium-webdriver');
+
 
 describe("ChatBotPage", function() {
   let driver, page;
