@@ -11,10 +11,10 @@ describe("ChatBotPage", function() {
   beforeEach(async function() {
     let options = new chrome.Options();
     options.addArguments("--headless");
-    driver = await new Builder()
-      .forBrowser("chrome")
-      .withCapabilities(webdriver.Capabilities.chrome().setChromeOptions(options))
-      .build();
+    driver = await new webdriver.Builder()
+  .withCapabilities(webdriver.Capabilities.chrome())
+  .setChromeOptions(options)
+  .build();
     page = await new ChatBotPage(driver).openChatbot();
   });
 
