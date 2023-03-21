@@ -6,7 +6,12 @@ describe("ChatBotPage", function() {
   let driver, page;
 
   beforeEach(async function() {
-    driver = await new Builder().forBrowser("chrome").build();
+    let options = new chrome.Options();
+    options.addArguments("--headless");
+    driver = await new Builder()
+      .forBrowser("chrome")
+      .withCapabilities(webdriver.Capabilities.chrome().setChromeOptions(options))
+      .build();
     page = await new ChatBotPage(driver).openChatbot();
   });
 
